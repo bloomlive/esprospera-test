@@ -38,7 +38,6 @@ export class CreateIndustryChangeApplicationDto {
   regulatoryElection?: RegulatoryElection | null;
 
   @IsString()
-  @IsOptional()
   @ValidateIf(
     (o: CreateIndustryChangeApplicationDto) => o.willWorkInPhysicalJurisdiction,
   )
