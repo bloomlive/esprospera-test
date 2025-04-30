@@ -23,7 +23,7 @@ export class IndustryInfo {
   regulatoryElection?: RegulatoryElection;
 
   @Prop({ type: 'string', default: null })
-  regulatoryElectionSub?: string;
+  regulatoryElectionSub?: string | null;
 }
 
 @Schema()
