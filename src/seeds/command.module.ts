@@ -9,6 +9,7 @@ import {
 } from '../models/industry-change-application.model';
 import { ResidentSeed } from './resident.seed';
 import databaseConfig from '../config/database.config';
+import { IndustryChangeApplicationSeed } from './industry-change-application.seed';
 
 @Module({
   imports: [
@@ -32,7 +33,7 @@ import databaseConfig from '../config/database.config';
       },
     ]),
   ],
-  providers: [ResidentSeed],
-  exports: [ResidentSeed],
+  providers: [ResidentSeed, IndustryChangeApplicationSeed],
+  exports: [ResidentSeed, IndustryChangeApplicationSeed],
 })
 export class SeedModule {}
