@@ -35,11 +35,17 @@ export class CreateIndustryChangeApplicationDto {
     message:
       'Regulatory election is required when working in physical jurisdiction',
   })
-  regulatoryElection?: RegulatoryElection | null;
+  regulatoryElection?: RegulatoryElection;
 
   @IsString()
+  @IsOptional()
   @ValidateIf(
-    (o: CreateIndustryChangeApplicationDto) => o.willWorkInPhysicalJurisdiction,
+    (o: CreateIndustryChangeApplicationDto) =>
+      !o.willWorkInPhysicalJurisdiction,
   )
-  regulatoryElectionSub?: string;
+  @IsEmpty()
+  @IsString({
+    message: 'Regulatory election sub must be a string when provided',
+  })
+  regulatoryElectionSub?: string | null;
 }

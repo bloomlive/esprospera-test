@@ -22,7 +22,7 @@ export class IndustryInfo {
   @Prop({ enum: RegulatoryElection })
   regulatoryElection?: RegulatoryElection;
 
-  @Prop()
+  @Prop({ type: 'string', default: null })
   regulatoryElectionSub?: string;
 }
 
